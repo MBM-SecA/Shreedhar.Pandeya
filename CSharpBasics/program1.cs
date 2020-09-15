@@ -1,13 +1,13 @@
-// using System;
+using System;
+using System.Collections.ObjectModel;
+using LearnCollections;
 
-// class XYZ{
-//     static void main()
-//     {
-//         (float, int , string) GetNum(int x, int y)
-//         {
-//             return(12, 12, "a");
-            
-//         }
-//     }
+public class Program{
 
-// }
+    static void Main()
+    {
+        Collection collection = new Collection();
+        collection.LearnDictionary();
+
+    }
+}

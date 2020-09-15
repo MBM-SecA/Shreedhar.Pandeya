@@ -23,7 +23,7 @@ namespace AllAboutClasses
         {
             Name = name;
             Population = population;
-            Area = area;
+            //Area = area;
 
 
         }
@@ -38,7 +38,7 @@ namespace AllAboutClasses
         void DoSomething()
         {
             Country country = new Country();
-            Country country1 = new Country("Nepal");
+           // Country country1 = new Country("Nepal");
 
         }
     }
