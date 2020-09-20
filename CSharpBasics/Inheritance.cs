@@ -1,5 +1,12 @@
 using System;
 
+public interface IShapeWithSides
+{
+    public double GetDiagonal();
+    
+
+}
+
 public abstract class Shape
 {
 
@@ -8,16 +15,16 @@ public abstract class Shape
 
     public abstract double GetCircumference();
     
-    public void Display(Shape shape)
+    public virtual void Display()
     {
-        Console.WriteLine($"Displaying result for : {shape}");
+        Console.WriteLine("Displaying result");
 
     }
 
 
 
 }
-public class Square : Shape
+public class Square : Shape , IShapeWithSides
 {
 
     public Square(double side)
@@ -29,10 +36,18 @@ public class Square : Shape
     public override double GetArea() => Side * Side;
     public override double GetCircumference() => Side + breadth ;
 
+    public override void Display()
+    {
+        Console.WriteLine($"displaying results for square with side {Side}:");
+        Console.WriteLine($"Area: {this.GetArea()}");
+        Console.WriteLine($"Diagonal : {this.GetDiagonal()}");
+    }
+    public double GetDiagonal() =>Math.Sqrt(2 *Side *Side);
+
     
 
 }
-public class Rectangle : Shape
+public class Rectangle : Shape , IShapeWithSides
 {
 
     public double length {get; set;}
@@ -47,6 +62,8 @@ public class Rectangle : Shape
     public override double GetArea() => length * breadth;
     public override double GetCircumference() => 2*(length + breadth );
 
+    public double GetDiagonal() =>Math.Sqrt(length*length + breadth*breadth);
+
     
 
 }
@@ -60,3 +77,11 @@ public class Circle : Shape
     
 
 }
+ class a {}
+  class b : a {}
+
+  class c : b , IA, IB {}
+
+
+  interface IA {}
+   interface IB {}

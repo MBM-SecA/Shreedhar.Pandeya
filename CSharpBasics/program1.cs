@@ -10,7 +10,8 @@ public class Program{
         // collection.LearnDictionary();
         Square square = new Square(12.4);
         //square.Side = 12;
-       var SquareArea = square.GetArea();
+        square.Display();
+       //var SquareArea = square.GetArea();
 
         Rectangle rect = new Rectangle(12.4 , 16.1);
         var AreaRect =  rect.GetArea();
