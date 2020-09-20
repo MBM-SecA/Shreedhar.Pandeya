@@ -9,7 +9,8 @@ namespace AllAboutClasses
 
         public int Population{get; set;}
 
-        public const double Area = 12312;
+        public readonly double AREA = 12312.45;
+        public static readonly bool IsOnEarth;
 
         //Default Constructor
         public Country()
@@ -18,14 +19,30 @@ namespace AllAboutClasses
         }
 
         //Paramaterized Constructor
+        public Country(string name)
+        {
+            Name = name;
+        }
         public Country(string name, int population, double area)
 
         {
             Name = name;
             Population = population;
-            //Area = area;
+            AREA = area;
 
 
+        }
+
+        //static Constructor
+        static Country()
+        {
+            IsOnEarth = true;
+        }
+
+        //Destructor, Finalizer
+        ~Country()
+        {
+           Console.WriteLine("I am dying..."); 
         }
 
 
@@ -38,7 +55,7 @@ namespace AllAboutClasses
         void DoSomething()
         {
             Country country = new Country();
-           // Country country1 = new Country("Nepal");
+            Country country1 = new Country("Nepal");
 
         }
     }
