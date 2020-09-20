@@ -2,7 +2,7 @@ using System;
 
 public class MethodTeacher1
 {
-    static void Main()
+    static void Main90()
     {
         MethodTeacher1 methodTeacher = new MethodTeacher1();
         double sum = methodTeacher.Sum(2345.6, 23452.1);
