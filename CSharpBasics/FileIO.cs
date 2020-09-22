@@ -5,9 +5,12 @@ public class FileIO
 {
     public void LearnFileHandling()
     {
-        string FIleCOntent = File.ReadAllText(@"C:\Users\User\Desktop\C# github repo\Readme.txt");
+        string filename = (@"C:\Users\User\Desktop\C# github repo\Readme.txt");
+        if(File.Exists(filename))
+       { string FIleCOntent = File.ReadAllText(@"C:\Users\User\Desktop\C# github repo\Readme.txt");
         Console.WriteLine(FIleCOntent);
 
+       }
 
     }
 }
