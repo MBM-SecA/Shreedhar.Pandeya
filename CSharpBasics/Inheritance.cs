@@ -24,45 +24,39 @@ public abstract class Shape
 
 
 }
-public class Square : Shape , IShapeWithSides
-{
 
-    public Square(double side)
-    {
-        Side = side;
-    }
-    public double Side {get; set;}
-    public double breadth {get; set;}
-    public override double GetArea() => Side * Side;
-    public override double GetCircumference() => Side + breadth ;
-
-    public override void Display()
-    {
-        Console.WriteLine($"displaying results for square with side {Side}:");
-        Console.WriteLine($"Area: {this.GetArea()}");
-        Console.WriteLine($"Diagonal : {this.GetDiagonal()}");
-    }
-    public double GetDiagonal() =>Math.Sqrt(2 *Side *Side);
-
-    
-
-}
 public class Rectangle : Shape , IShapeWithSides
 {
 
-    public double length {get; set;}
-    public double breadth {get; set;}
+    public double Length {get; set;}
+    public double Breadth {get; set;}
 
-    public Rectangle(double Length, double Breadth)
+    public Rectangle(double length, double breadth)
     {
         Length = length;
         Breadth = breadth;
 
     }
-    public override double GetArea() => length * breadth;
-    public override double GetCircumference() => 2*(length + breadth );
+    public override double GetArea() => Length * Breadth;
+    public override double GetCircumference() => 2*(Length + Breadth );
 
-    public double GetDiagonal() =>Math.Sqrt(length*length + breadth*breadth);
+    public double GetDiagonal() =>Math.Sqrt(Length*Length + Breadth*Breadth);
+     public override void Display()
+    {
+        Console.WriteLine($"displaying results for rectangle with length [{Length}X{Breadth}]:");
+        Console.WriteLine($"Area: {this.GetArea()}");
+        Console.WriteLine($"Diagonal : {this.GetDiagonal()}");
+    }
+
+    
+
+}
+public class Square : Rectangle
+{
+    public Square(double side) : base (side, side)
+    {
+
+    }
 
     
 

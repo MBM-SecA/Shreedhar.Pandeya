@@ -13,9 +13,9 @@ public class Program{
         square.Display();
        //var SquareArea = square.GetArea();
 
-        Rectangle rect = new Rectangle(12.4 , 16.1);
-        var AreaRect =  rect.GetArea();
-        var CircRect = rect.GetCircumference();
+        // Rectangle rect = new Rectangle(12.4 , 16.1);
+        // var AreaRect =  rect.GetArea();
+        // var CircRect = rect.GetCircumference();
 
 
     }
