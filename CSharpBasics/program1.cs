@@ -17,8 +17,9 @@ public class Program{
         // var AreaRect =  rect.GetArea();
         // var CircRect = rect.GetCircumference();
         FileIO fileio = new FileIO();
-        fileio.LearnFileHandling();
-
+        //fileio.LearnFileHandling();
+       // fileio.LearnFileInfo();
+       fileio.LearnDirectories();
 
     }
 }

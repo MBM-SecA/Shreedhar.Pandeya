@@ -20,5 +20,28 @@ public class FileIO
        }
        File.WriteAllText(filename, "This is just a text file");
 
+       
+
+
     }
+    public void LearnFileInfo()
+    {
+        string filename = "file.txt";
+        FileInfo fileInfo = new FileInfo(filename);
+        var size = fileInfo.Length;
+        var createdDate = fileInfo.CreationTime;
+
+        Console.WriteLine($"File size : {size} bytes");
+        Console.WriteLine($"Date Created : {createdDate} ");
+
+    }
+
+    public void LearnDirectories()
+    {
+        string dirName = "A";
+        Directory.CreateDirectory(dirName);
+
+    }
+    //Q2: Create a folder "Parent", create 10 subfolders in "Parent". Each folder should contain a C# file with "Hello World" program
+    
 }
