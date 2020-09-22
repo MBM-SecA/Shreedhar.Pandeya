@@ -16,6 +16,8 @@ public class Program{
         // Rectangle rect = new Rectangle(12.4 , 16.1);
         // var AreaRect =  rect.GetArea();
         // var CircRect = rect.GetCircumference();
+        FileIO fileio = new FileIO();
+        fileio.LearnFileHandling();
 
 
     }
