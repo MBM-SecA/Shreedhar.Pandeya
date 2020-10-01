@@ -23,6 +23,7 @@ namespace Async
             var yahooA = await client.GetStringAsync("https://yahoo.com/");
             var facebookA = await client.GetStringAsync("https://facebook.com/");
             Console.WriteLine($"It took {stopwatch.ElapsedMilliseconds} ms");
+            
  
         }
     }
