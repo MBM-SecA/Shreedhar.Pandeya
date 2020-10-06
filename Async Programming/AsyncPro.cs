@@ -16,10 +16,20 @@ static void Main()
 
     //Sequential method
     TurnOnBurner();
+    PutOnBurner();
+    
     
     
 
 }
 
+    private static void PutOnBurner()
+    {
+        
+    }
 
+    private static void TurnOnBurner()
+    {
+        
+    }
 }
