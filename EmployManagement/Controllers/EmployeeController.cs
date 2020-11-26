@@ -1,22 +1,38 @@
 
 using System.Collections.Generic;
+using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 public class EmployeeController : Controller 
 {
     public ActionResult Index()
     {
-        
-        Person empl1 = new Person()
-            { FirstName = "Shreedhar",Surname = "Pandeya",Address = "Dang",Gender = 'M',Salary = 20000.0};
-        Person empl2 = new Person()
-            { FirstName = "Shreedhar",Surname = "Pandeya",Address = "Dang",Gender = 'M',Salary = 20000.0};
-        Person empl3 = new Person()
-            {FirstName = "Shreedhar",Surname = "Pandeya",Address = "Dang",Gender = 'M',Salary = 20000.0};
-
-        
-         List<Person> employees = new List<Person>() {empl1, empl2, empl3};
+        List<Person> employees = Person.GetPerson();
          return View(employees);
     }
+
+    
+    public ActionResult Details([FromQuery] int id)
+    {
+        var employe = Person.GetPerson();
+        var reqEmployee = employe.FirstOrDefault(x=>x.ID==id);
+        return View(reqEmployee);
+
+    }
+
+    public ActionResult Add()
+    {
+        return View();
+
+    }
+
+    [HttpPost]
+    public ActionResult<string> Add(Person person)
+    {
+        return "Records Saved"; 
+
+    }
+
+
 
 }
 

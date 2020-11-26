@@ -1,11 +1,17 @@
+@{
+    ViewData["Title"] = "EmployeeList";
+}
+
+
 @model List<Person>
 
-<h1> All Employees....</h1>
+<h1> All Employees....(@Model.Count())</h1>
 
 <table class="table">
   <thead class="thead-dark">
     <tr>
 
+      <th scope= "col">SN</th>
       <th scope="col">FirstName</th>
       <th scope="col">LastName</th>
       <th scope="col">Address</th>
@@ -14,10 +20,17 @@
     </tr>
   </thead>
   <tbody>
+    @{int i = 1;}
    @foreach(var employee in Model)
    {
        <tr scope = "row">
-           <td>@employee.FirstName</td>
+           <td> @(i++)</td>
+           <td>
+             
+             @*<a asp-controller = "Employee" asp-action = "Details" >@employee.FirstName</a>*@
+             <a href ="/employee/Details?ID=@employee.ID" >@employee.FirstName</a>
+            </td>
+          
            <td>@employee.Surname</td>
            <td>@employee.Address</td>
            <td>@employee.Gender</td>
