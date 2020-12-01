@@ -6,7 +6,12 @@ public class EmployeeController : Controller
 {
     public ActionResult Index()
     {
-        List<Person> employees = Person.GetPerson();
+        var db = new EMSContext();
+        var employees = db.Employees.ToList();
+        
+
+        
+
          return View(employees);
     }
 
