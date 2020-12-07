@@ -3,10 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 public class EmployeeController : Controller 
+
 {
+    private EMSContext db;
+    public EmployeeController(EMSContext _db)
+    {
+        db = _db;
+    }
     public ActionResult Index()
     {
-        var db = new EMSContext();
         var employees = db.Employees.ToList();
         
 
@@ -18,9 +23,8 @@ public class EmployeeController : Controller
     
     public ActionResult Details([FromQuery] int id)
     {
-        var employe = Person.GetPerson();
-        var reqEmployee = employe.FirstOrDefault(x=>x.ID==id);
-        return View(reqEmployee);
+       var employee = db.Employees.Find(id);
+        return View(employee);
 
     }
 
