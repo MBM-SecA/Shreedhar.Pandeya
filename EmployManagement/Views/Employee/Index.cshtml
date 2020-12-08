@@ -26,15 +26,20 @@
        <tr scope = "row">
            <td> @(i++)</td>
            <td>
+             @{
              
-             @*<a asp-controller = "Employee" asp-action = "Details" >@employee.FirstName</a>*@
-             <a href ="/employee/Details?ID=@employee.ID" >@employee.FirstName</a>
+             string employeeFirstName = employee.FirstName;
+             }
+
+             <a hred = "/employee/detail?id = @employee.ID">@employeeFirstName</a>
             </td>
           
            <td>@employee.Surname</td>
            <td>@employee.Address</td>
            <td>@employee.Gender</td>
            <td>@employee.Salary</td>
+           <td><a href="/Employee/Update?id=@employee.ID" class="btn btn-sm btn-primary">Edit</a></td>
+          <td><a href="/Employee/Delete?id=@employee.ID" class="btn btn-sm btn-danger">Delete</a></td>
 
        </tr>
    }

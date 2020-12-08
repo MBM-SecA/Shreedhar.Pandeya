@@ -9,7 +9,9 @@ public class EMSContext: DbContext
     {
  
     }
-    public DbSet<Person> Employees {get;set;}
+    public DbSet<Person> People {get;set;}
+    
+
     
     
 }

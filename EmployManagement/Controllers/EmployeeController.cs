@@ -12,7 +12,7 @@ public class EmployeeController : Controller
     }
     public ActionResult Index()
     {
-        var employees = db.Employees.ToList();
+        var employees = db.People.ToList();
         
 
         
@@ -23,7 +23,7 @@ public class EmployeeController : Controller
     
     public ActionResult Details([FromQuery] int id)
     {
-       var employee = db.Employees.Find(id);
+       var employee = db.People.Find(id);
         return View(employee);
 
     }
@@ -37,8 +37,37 @@ public class EmployeeController : Controller
     [HttpPost]
     public ActionResult<string> Add(Person person)
     {
-        return "Records Saved"; 
+        db.People.Add(person);
+        db.SaveChanges();
 
+        return RedirectToAction(nameof(Index));
+
+    }
+     public ActionResult Update(int id){
+        var employee = db.People.Find(id);
+        return View(employee);
+
+    }
+    [HttpPost]
+     public ActionResult Update(Person person){
+        db.People.Attach(person);
+        db.People.Update(person);
+        db.SaveChanges();
+        return RedirectToAction(nameof(Index));;
+
+    }
+     public ActionResult Delete(int id){
+
+        var person = db.People.Find(id);
+        return View(person);
+    }
+
+    [HttpPost]
+    public ActionResult Delete(Person person){
+        db.People.Attach(person);
+        db.People.Remove(person);
+        db.SaveChanges();
+        return RedirectToAction(nameof(Index));
     }
 
 

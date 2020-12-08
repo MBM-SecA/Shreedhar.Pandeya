@@ -23,15 +23,15 @@ public class Person
      {
          Person emp1 = new Person()
          {
-           ID = 1 ,  FirstName = "Shreedahr1",Surname = "Pandeya", Address= " Dang", Salary= 2000
+            FirstName = "Shreedahr1",Surname = "Pandeya", Address= " Dang", Salary= 2000
          };
          Person emp2 = new Person()
          {
-             ID = 2 ,FirstName = "Shreedahr2",Surname = "Pandeya", Address= " Dang", Salary= 2000
+            FirstName = "Shreedahr2",Surname = "Pandeya", Address= " Dang", Salary= 2000
          };
          Person emp3 = new Person()
          {
-            ID = 3 , FirstName = "Shreedahr3",Surname = "Pandeya", Address= " Dang", Salary= 2000
+            FirstName = "Shreedahr3",Surname = "Pandeya", Address= " Dang", Salary= 2000
          };
           List<Person> employees = new List<Person> {emp1,emp2,emp3};
         return employees;
