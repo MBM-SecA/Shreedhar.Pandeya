@@ -14,6 +14,12 @@ public class DepartmentController : Controller
         var department = db.Departments.ToList();
         return View(department);
     }
+    public ActionResult Details( int id)
+    {
+       var department = db.Departments.Find(id);
+        return View(department);
+
+    }
 
     public ActionResult Add()
     {
